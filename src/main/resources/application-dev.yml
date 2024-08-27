@@ -1,0 +1,39 @@
+spring:
+  aop:
+    auto: true
+    proxy-target-class: true
+  servlet:
+    multipart:
+      enabled: true
+      max-request-size: 11MB
+      max-file-size: 10MB
+  messages:
+    basename: i18n/messages #\u914D\u7F6E\u56FD\u9645\u5316\u8D44\u6E90\u6587\u4EF6\u8DEF\u5F84
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://127.0.0.1:3306/transcoding?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&allowPublicKeyRetrieval=true&useSSL=false"
+    username: "root"
+    password: "1wax@QSZ"
+
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      auto-commit: true
+mybatis-plus:
+  type-aliases-package: com.lc.transcoding.entity
+  global-config:
+    banner: false
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+ffmpeg:
+  path: D:\\tools\\ffmpeg\\bin\\ffmpeg.exe
+  outputDir: D:\\finish\\output
+  tmpDir: D:\\tmp
+minio:
+  minio_url: http://127.0.0.1:9000
+  minio_name: minioadmin
+  minio_pass: minioadmin
+  bucketName: playedu
+officeUrl: D:\\tools\\OpenOfficeinstall
